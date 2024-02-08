@@ -1,0 +1,47 @@
+# example-backup.yml
+
+backups:
+  # Variante 1 Multiple Sources & Targets
+  # Alle Sourcen werden nach ziel 1 und ziel 2 kopiert
+  - name: "Backup Gruppe 1"
+    sources:
+      - "/pfad/zu/quelle1"
+      - "/pfad/zu/quelle2"
+    targets:
+      - "/pfad/zu/ziel1"
+      - "/pfad/zu/ziel2"
+    # Details in settings.yml
+    config:
+      dry: false
+      check: true
+      log: 2
+      logName: "backup1"
+      logPath: "/var/logs/backup1"
+
+  # Variante 2 Multiple Sources & single Target
+  # Alle Sourcen werden nach ziel kopiert
+  - name: "Backup Gruppe 2"
+    sources:
+      - "/pfad/zu/quelle1"
+      - "/pfad/zu/quelle2"
+    target: "/pfad/zu/ziel"
+    # Details in settings.yml
+    config:
+      dry: false
+      check: true
+      log: 2
+      logName: "backup1"
+      logPath: "/var/logs/backup1"
+
+  # Variante 3 single Source & single Target
+  # Kopiere Quelle => Ziel
+  - name: "Backup Gruppe 3"
+    source: "/pfad/zu/quelle"
+    target: "/pfad/zu/ziel"
+    # Details in settings.yml
+    config:
+      dry: true
+      check: false
+      log: 1
+      logName: "backup1"
+      logPath: "/var/logs/backup1"
