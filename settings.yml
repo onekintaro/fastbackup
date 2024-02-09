@@ -1,39 +1,25 @@
-global_config:
-  # Enable Dry-Run
-  dry: true
-  # Enable file Checksum Check
-  check: true
-  # Headless mode, No Menu & no Output
-  headless: false
+global:
+  config:
+    dry: true
+    check: true
+    headless: false
 
-global_script_config:
-  # Scripts on Error, Checkfile Error & Success
-  # Use null to disable
-  onError: "/pfad/zu/error_script.sh"
-  onCheckError: "/pfad/zu/check_error_script.sh"
-  onSuccess: "/pfad/zu/success_script.sh"
+  script:
+    onError: null
+    onCheckError: null
+    onSuccess: null
 
-global_log_config:
-  # Log Level
-  # 0 No Logging
-  # 1 Console Outputs & checkfile.log (only Files with check errors)
-  # 2 All of 1 & copyfiles.log (Detailed File list, also fully checkfile.log errors and success)
-  # 3 All above & Debug
-  log: 1
-  # Log Path
-  logPath: "./logs"
-  # Log Prefix Name (zb fastbackup_checkfile.log)
-  logName: "fastbackup"
-
-  # This settings are global only
-  # Log Date (zb fastbackup_checkfile_20240218.log)
-  logDate: true
-  # Logfile names (prefix_)name(_date).log
-  logNames:
-    console: "console"
-    checkfile: "check"
-    copyfiles: "copy"
-    error: "error"
-    debug: "debug"
-
-
+  log:
+    log: 1
+    logPath: "./logs"
+    logPrefix: null
+    logSuffix: null
+    logDate: false
+    logTime: false
+    logOverwrite: true
+    logNames:
+      console: "run"
+      checkfile: "check"
+      copyfiles: "copy"
+      error: "error"
+      debug: "debug"

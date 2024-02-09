@@ -45,3 +45,43 @@ backups:
       log: 1
       logName: "backup1"
       logPath: "/var/logs/backup1"
+
+# Beispiel Backup-Konfigurationsdatei für fastbackup
+
+backups:
+  - name: "Backup Gruppe 1 - Mehrere Quellen, Mehrere Ziele"
+    source:
+      - "/pfad/zu/quelle1"
+      - "/pfad/zu/quelle2"
+    target:
+      - "/pfad/zu/ziel1"
+      - "/pfad/zu/ziel2"
+    config:
+      dry: false
+      check: true
+      log: 2
+      logName: "backup_gruppe1"
+      logPath: "/var/logs/fastbackup/backup_gruppe1"
+
+  - name: "Backup Gruppe 2 - Mehrere Quellen, Einzelnes Ziel"
+    source:
+      - "/pfad/zu/quelle1"
+      - "/pfad/zu/quelle2"
+    target: "/pfad/zu/ziel"
+    config:
+      dry: false
+      check: true
+      log: 2
+      logName: "backup_gruppe2"
+      logPath: "/var/logs/fastbackup/backup_gruppe2"
+
+  - name: "Backup Gruppe 3 - Einzelne Quelle, Einzelnes Ziel"
+    source: "/pfad/zu/quelle"
+    target: "/pfad/zu/ziel"
+    config:
+      dry: true
+      check: false
+      log: 1
+      logName: "backup_gruppe3"
+      logPath: "/var/logs/fastbackup/backup_gruppe3"
+
