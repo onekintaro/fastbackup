@@ -22,6 +22,7 @@ FastBackup ist ein leistungsfähiges, flexibles und einfach zu bedienendes Backu
 - [ ] install.sh Skript für Abhängigkeiten
 - [ ] fastbackup.sh Skript als Hauptskript
 - [ ] fastbackup.py Skript für die eigentliche Backup-Logik
+- [ ] Windows-Unterstützung (Powershell-Skript)
 
 ## Voraussetzungen
 
